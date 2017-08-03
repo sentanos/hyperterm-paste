@@ -32,7 +32,7 @@ exports.decorateTerm = (Term, { React }) => {
           if (!e.shiftKey) {
             sanitizedClipboard = sanitizeInput(rawClipboard)
           } else {
-            sanitizedClipboard = rawClipboard
+            sanitizedClipboard = rawClipboard.replace(/\n/g, '\r')
           }
           terminal.io.sendString(sanitizedClipboard)
 
